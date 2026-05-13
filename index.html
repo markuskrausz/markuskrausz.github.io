@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markus Krausz</title>
+<style>
+  :root {
+    --accent: #1848ad;
+    --accent-light: #dbeafe;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-300: #d1d5db;
+    --gray-600: #4b5563;
+    --gray-900: #111827;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    color: var(--gray-900);
+    background: var(--gray-100);
+    line-height: 1.6;
+  }
+  .container { max-width: 860px; margin: 0 auto; padding: 40px 24px; }
+
+  header {
+    background: white;
+    border-radius: 16px;
+    padding: 48px 40px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  header h1 { font-size: 2.25rem; font-weight: 700; letter-spacing: -.02em; }
+  header .affiliation {
+    font-size: 1.125rem; color: var(--gray-600); margin-top: 8px;
+  }
+  header .contact-links {
+    display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px;
+  }
+  header .contact-links a {
+    color: var(--accent); text-decoration: none; font-size: .9375rem;
+  }
+  header .contact-links a:hover { text-decoration: underline; }
+
+  section {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 40px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  }
+  section h2 {
+    font-size: 1.25rem; font-weight: 600;
+    padding-bottom: 8px; border-bottom: 2px solid var(--accent-light);
+    margin-bottom: 20px; color: var(--accent);
+  }
+
+  .about p { color: var(--gray-600); }
+
+  .pub { margin-bottom: 16px; }
+  .pub:last-child { margin-bottom: 0; }
+  .pub .title { font-weight: 600; }
+  .pub .authors { color: var(--gray-600); font-size: .9375rem; }
+  .pub .venue { color: var(--gray-600); font-size: .875rem; font-style: italic; }
+  .pub .links { margin-top: 4px; }
+  .pub .links a {
+    font-size: .8125rem; color: var(--accent); text-decoration: none; margin-right: 12px;
+  }
+  .pub .links a:hover { text-decoration: underline; }
+
+  .service-table {
+    width: 100%; border-collapse: collapse; color: var(--gray-600);
+  }
+  .service-table td {
+    padding: 2px 12px; vertical-align: top; line-height: 1.5;
+  }
+  .service-table .year-col {
+    width: 80px; font-weight: 600; color: var(--gray-900);
+    white-space: nowrap;
+  }
+  .service-table tr:first-child td { padding-top: 0; }
+  .service-table tr:last-child td { padding-bottom: 0; }
+
+  .talk-item {
+    font-size: .9375rem; color: var(--gray-900); margin-bottom: 8px;
+  }
+  .talk-item:last-child { margin-bottom: 0; }
+  .talk-item .talk-name { font-weight: 600; }
+  .talk-item .talk-location { color: var(--gray-600); }
+
+  footer {
+    text-align: center; color: var(--gray-600); font-size: .875rem;
+    padding: 16px 0 40px;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px; }
+    header { padding: 28px 20px; }
+    section { padding: 24px 20px; }
+    header h1 { font-size: 1.75rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Markus Krausz</h1>
+    <div class="affiliation">Applied Cryptography and Hardware Security</div>
+    <div class="contact-links">
+      <a href="mailto:markus.krausz@rub.de">Mail</a>
+      <a href="https://linkedin.com/in/markus-krausz-b9b2482a0">LinkedIn</a>
+      <a href="https://scholar.google.de/citations?user=H7C7_ZMAAAAJ&hl">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-1362-423X">ORCID</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About</h2>
+    <p>
+      I am a hardware security expert at <a href="https://www.tuvit.de/en/">TÜVIT</a> in Germany, 
+      where I evaluate the security of cryptographic implementations against physical attacks.
+      In 2024, I obtained my <a href="https://doi.org/10.13154/294-12344">PhD</a> on side-channel security for post-quantum cryptography under the supervision of 
+      <a href="https://informatik.rub.de/seceng/personen/gueneysu/">Prof. Dr. Tim Güneysu</a> at Ruhr-University Bochum.
+      My research focuses on highly efficient, and side-channel-secure implementations of (post-quantum) cryptography for embedded devices.
+      <br>
+      <br>
+      I'm part of the <a href="https://kpqc.cryptolab.co.kr/haetae">HAETAE</a> submission team. 
+      HAETAE is a lattice-based signature scheme and selected for standardization by the <a href="https://kpqc.or.kr/">Kpqc</a> competition.
+    </p>
+  </section>
+
+  <section class="publications">
+    <h2>Publications</h2>
+
+    <div class="pub">
+      <div class="title">120 Domain-Specific Languages for Security</div>
+      <div class="authors">Markus Krausz, Sven Peldszus, Thorsten Berger, Francesco Regazzoni, Tim Güneysu</div>
+      <div class="venue">ACM CSUR 2026 &middot; <a href="https://doi.org/10.1145/3802817">[doi]</a> <a href="https://dl.acm.org/doi/pdf/10.1145/3802817">[pdf]</a></div>
+    </div>
+    
+    <div class="pub">
+      <div class="title">t-Probing (In-)Security</div>
+      <div class="authors">Dina Hesse, Jakob Feldtkeller, Tim Güneysu, Julius Hermelink, Georg Land, Markus Krausz, Jan Richter-Brockmann</div>
+      <div class="venue">TCHES 2026 &middot; <a href="https://doi.org/10.46586/tches.v2026.i2.1-27">[doi]</a> <a href="https://tches.iacr.org/index.php/TCHES/article/view/12878/12506">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">To Extend or Not to Extend: Agile Masking Instructions for PQC</div>
+      <div class="authors"> Markus Krausz, Georg Land, Florian Stolz, Jan Richter-Brockmann, Tim Güneysu</div>
+      <div class="venue">CANS 2025 &middot; <a href="https://doi.org/10.1007/978-981-95-4434-9_4">[doi]</a> <a href="https://eprint.iacr.org/2023/1287">[preprint]</a></div>
+    </div>
+
+      <div class="pub">
+      <div class="title">HAETAE: Shorter Lattice-Based Fiat-Shamir Signatures</div>
+      <div class="authors"> Jung Hee Cheon, Hyeongmin Choe, Julien Devevey, Tim Güneysu, Dongyeon Hong, Markus Krausz, Georg Land, Marc Möller, Damien Stehlé, MinJune Yi</div>
+      <div class="venue">TCHES 2024 &middot; <a href=" https://doi.org/10.46586/tches.v2024.i3.25-75">[doi]</a> <a href="https://tches.iacr.org/index.php/TCHES/article/view/11669/11189">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Three Sidekicks to Support Spectre Countermeasures</div>
+      <div class="authors"> Markus Krausz, Jan Philipp Thoma, Florian Stolz, Marc Fyrbiak, Tim Güneysu</div>
+      <div class="venue">DATE 2024 &middot; <a href="https://doi.org/10.23919/DATE58400.2024.10546575">[doi]</a> <a href="https://drive.google.com/file/d/1g6GUCt48keXuRHV4OAzH-fCGjaTP6KdG/view">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">pqm4: Benchmarking NIST Additional Post-Quantum Signature Schemes on Microcontrollers</div>
+      <div class="authors"> Matthias J. Kannwischer, Markus Krausz, Richard Petri, Shang-Yi Yang</div>
+      <div class="venue">NIST PQC 2024 &middot; <a href="https://csrc.nist.gov/csrc/media/Events/2024/fifth-pqc-standardization-conference/documents/papers/pqm4-benchmarking-nist-addl-pq-sig-schemes.pdf">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">A Holistic Approach Towards Side-Channel Secure Fixed-Weight Polynomial Sampling</div>
+      <div class="authors"> Markus Krausz, Georg Land, Jan Richter-Brockmann, Tim Güneysu</div>
+      <div class="venue">PKC 2023 &middot; <a href="https://doi.org/10.1007/978-3-031-31371-4_4">[doi]</a> <a href="https://eprint.iacr.org/2022/1740">[preprint]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Efficiently Masking Polynomial Inversion at Arbitrary Order</div>
+      <div class="authors"> Markus Krausz, Georg Land, Jan Richter-Brockmann, Tim Güneysu</div>
+      <div class="venue">PQC 2022 &middot; <a href="https://doi.org/10.1007/978-3-031-17234-2_15">[doi]</a> <a href="https://eprint.iacr.org/2022/707">[preprint]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Carry-Less to BIKE Faster</div>
+      <div class="authors"> Ming-Shing Chen, Tim Güneysu, Markus Krausz, Jan Philipp Thoma</div>
+      <div class="venue">ACNS 2022 &middot; <a href="https://doi.org/10.1007/978-3-031-09234-3_41">[doi]</a> <a href="https://drive.google.com/file/d/1PlGHC1SRLNlUcNL3pEpyqVr9DYZtmq5q/view">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Optimizing BIKE for the Intel Haswell and ARM Cortex-M4</div>
+      <div class="authors"> Ming-Shing Chen, Tung Chou, Markus Krausz</div>
+      <div class="venue">CHES 2021 &middot; <a href="https://doi.org/10.46586/tches.v2021.i3.97-124 ">[doi]</a> <a href="https://tches.iacr.org/index.php/TCHES/article/view/8969/8547">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">BasicBlocker : ISA Redesign to Make Spectre-Immune CPUs Faster</div>
+      <div class="authors"> Jan Philipp Thoma, Jakob Feldtkeller, Markus Krausz, Tim Güneysu, Daniel J. Bernstein</div>
+      <div class="venue">RAID 2021 &middot; <a href="https://doi.org/10.1145/3471621.3471857">[doi]</a> <a href="https://dl.acm.org/doi/pdf/10.1145/3471621.3471857">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Evaluation of Lattice-Based Signature Schemes in Embedded Systems</div>
+      <div class="authors"> Tim Güneysu, Markus Krausz, Tobias Oder, Julian Speith</div>
+      <div class="venue">ICECS 2018 &middot; <a href="https://doi.org/10.1109/icecs.2018.8617969">[doi]</a> <a href="https://drive.google.com/file/d/1AOGoBqK2sHULCmfpTDcnJW4fZstMFMmI/view">[pdf]</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="title">Standard Lattice-Based Key Encapsulation on Embedded Devices</div>
+      <div class="authors"> James Howe, Tobias Oder, Markus Krausz, Tim Güneysu</div>
+      <div class="venue">CHES 2018 &middot; <a href="https://doi.org/10.13154/tches.v2018.i3.372-393">[doi]</a> <a href="https://tches.iacr.org/index.php/TCHES/article/view/7279/6457">[pdf]</a></div>
+    </div>
+  </section>
+
+  <section class="service">
+    <h2>Service</h2>
+    <table class="service-table">
+      <tr>
+        <td class="year-col">2027</td>
+        <td>Program Committee: IACR International Conference on Cryptographic Hardware and Embedded Systems (CHES) </td>
+      </tr>
+      <tr>
+        <td class="year-col" rowspan="3">2026</td>
+        <td>Program Committee: IACR International Conference on Cryptographic Hardware and Embedded Systems (CHES)</td>
+      </tr>
+      <tr>
+        <td>Program Committee: ACM Symposium on Applied Computing (SAC) </td>
+      </tr>
+      <tr>
+        <td>Reviewer: IACR International Cryptology Conference (CRYPTO)</td>
+      </tr>
+      <tr>
+        <td class="year-col" rowspan="2">2024</td>
+        <td>Program Committee: IACR International Conference on Public Key Cryptography (PKC)</td>
+      </tr>
+      <tr>
+        <td>Reviewer: IEEE Transactions on Circuits and Systems I: Regular Papers</td>
+      </tr>
+      <tr>
+        <td class="year-col">2023</td>
+        <td>Artifact Evaluation Committee: IACR International Conference on Cryptographic Hardware and Embedded Systems (CHES)</td>
+      </tr>
+      <tr>
+        <td class="year-col">2022</td>
+        <td>Reviewer: IEEE Transactions on Computers</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    &copy; Markus Krausz &middot; May 2026 
+  </footer>
+
+</div>
+</body>
+</html>
